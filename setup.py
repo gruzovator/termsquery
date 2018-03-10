@@ -5,7 +5,7 @@ setup(
     description='Terms boolean expressions to query containers',
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
-    py_moduless=['termsquery'],
+    py_modules=['termsquery'],
     python_requires='>=3',
     url='https://github.com/gruzovator/termsquery',
     license='MIT',
