@@ -3,6 +3,8 @@
 Base example:
 
 ```python
+#!/usr/bin/env python
+
 from termsquery import TermsQuery
 
 query = TermsQuery('a & ("term X"| b)')
@@ -20,6 +22,8 @@ and apply that query for document words.
 Simple tagging example:
 
 ```python
+#!/usr/bin/env python
+
 from termsquery import TermsQuery
 
 tags = {
