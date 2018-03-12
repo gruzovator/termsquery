@@ -1,4 +1,7 @@
-# Terms Boolean Queries for Containers
+# Boolean Search for Python Containers
+
+Library to make simple boolean queries for python string containers.
+E.g. query built from expression 'a & b & ~c' can be applied to any container to check if it contains strings 'a' and 'b' and not contains 'c'.
 
 Base example:
 
