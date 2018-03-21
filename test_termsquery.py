@@ -53,5 +53,21 @@ def test_query_exec_with_terms_conversion():
     assert True == query({'a'})
 
 
+def test_pickling_unpickling():
+    import pickle
+
+    src = 'A | ~(B & D)'
+
+    query_orig = TermsQuery(src)
+    query_dump = pickle.dumps(query_orig)
+    query_unpickled = pickle.loads(query_dump)
+
+    assert {t.value for t in query_orig.terms} == {t.value for t in query_unpickled.terms}
+    for query in (query_orig, query_unpickled):
+        assert True == query({'A'})
+        assert False == query({'B', 'D'})
+        assert True == query({'D'})
+
+
 if __name__ == '__main__':
     pytest.main()
