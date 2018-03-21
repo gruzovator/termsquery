@@ -12,6 +12,8 @@ item ::= term
 import re
 from collections import namedtuple
 
+__all__ = ['SyntaxError', 'TermsQuery']
+
 
 class SyntaxError(Exception):
     pass
