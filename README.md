@@ -1,6 +1,6 @@
 # Boolean Search for Python Containers
 
-Library to make simple boolean queries for python string containers.
+Library to make simple boolean queries for python string containers (e.g. sets or lists).
 E.g. query built from expression 'Alice & Bob & ~John' can be applied to any container to check if it contains strings 'Alice' and 'Bob' and not contains 'John'.
 
 Base example:
@@ -10,10 +10,10 @@ Base example:
 
 from termsquery import TermsQuery
 
-query = TermsQuery('a & ("term X"| b)')
+query = TermsQuery('Alice & (Bob | "Unknown user")')
 
-container1 = {'a', 'term X'}
-container2 = {'b'}
+container1 = {'Alice', 'Unknown user'}
+container2 = {'Bob'}
 
 assert True == query(container1)
 assert False == query(container2)
